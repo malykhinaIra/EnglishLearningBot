@@ -1,0 +1,76 @@
+{
+   "A1": {
+      "Film1": {
+         "name": "The Jungle Book",
+         "image": "images\\film1.png",
+         "description": "\u041ene of the best cartoons of the legendary Disney studio. If you are just starting to learnEnglish, we advise you to remember the wonderful tale of Mowgli and improve your language skills."
+      },
+      "Film2": {
+         "name": "Up",
+         "image": "images\\film2.png",
+         "description": "\u0421ute and exciting story in the Pixar studio cartoon about a jungle trip in a balloon is perfect for the A1 level."
+      },
+      "Film3": {
+         "name": "The Man Called Flinstone",
+         "image": "images\\film3.png",
+         "description": "A comedy cartoon, a parody of the 1966 James Bond movies, which remains just as relevant today. Simple vocabulary, excellent diction, cool plot - all important components in place."
+      },
+      "Film4": {
+         "name": "Finding Nemo",
+         "image": "images\\film4.png",
+         "description": "A bright cartoon about fish life, which is loved by viewers of all ages. And the cartoon won an Oscar in 2004."
+      }
+   },
+   "A2": {
+      "Film1": {
+         "name": "The Holiday.",
+         "image": "images\\film1.png",
+         "description": "Two women troubled with guy-problems swap homes in each other's countries, where they each meet a local guy and fall in love."
+      },
+      "Film2": {
+         "name": "My Big Fat Greek Wedding",
+         "image": "images\\Theholiday.png",
+         "description": "My Big Fat Greek Wedding tells the story of Toula Portokalos. She's 30 years old and still not married, which means as a nice Greek girl she's a failure."
+      },
+      "Film3": {
+         "name": "The Lion King",
+         "image": "images\\thelionking.png",
+         "description": "Disney\u2019s film journeys to the African savanna where a future king is born. Simba idolizes his father, King Mufasa, and takes to heart his own royal destiny. "
+      },
+      "Film4": {
+         "name": "The Wizard of Oz ",
+         "image": "images\\film1.png",
+         "description": "Young Dorothy Gale and her dog are swept away by a tornado from their Kansas farm to the magical Land of Oz, and embark on a quest with three new friends to see the Wizard, who can return her to her home and fulfill the others' wishes."
+      }
+   },
+   "B1": {
+      "Film1": {
+         "name": "filmB1",
+         "description": "filmB1"
+      },
+      "Film2": {
+         "name": "2filmB1",
+         "description": "2filmB1"
+      }
+   },
+   "B2": {
+      "Film1": {
+         "name": "filmB2",
+         "description": "filmB2"
+      },
+      "Film2": {
+         "name": "2filmB2",
+         "description": "2filmB2"
+      }
+   },
+   "C1": {
+      "Film1": {
+         "name": "filmC1",
+         "description": "filmC2"
+      },
+      "Film2": {
+         "name": "2filmC1",
+         "description": "2filmC1"
+      }
+   }
+}

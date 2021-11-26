@@ -1,0 +1,46 @@
+{
+   "A1": {
+      "Book1": {
+         "name": "Eleanor Jupp \u2013 Ski Race",
+         "image": "images\\ski-jump.jpg",
+         "description": "About lovers of skiing Rebecca and Sue, who decided to take part in the competition."
+      }
+   },
+   "A2": {
+      "Book1": {
+         "name": "Eleanor Jupp \u2013 Ski Race",
+         "image": "images\\ski-jump.jpg",
+         "description": "About lovers of skiing Rebecca and Sue, who decided to take part in the competition."
+      }
+   },
+   "B1": {
+      "Book1": {
+         "name": "Book1 level B1",
+         "description": "description book1"
+      },
+      "Book2": {
+         "name": "book2 level B1",
+         "description": "description book2"
+      }
+   },
+   "B2": {
+      "Book1": {
+         "name": "book1 levev B2",
+         "description": "decsription book1 b2"
+      },
+      "Book2": {
+         "name": "book2 levev B2",
+         "description": "decsription book2 b2"
+      }
+   },
+   "C1": {
+      "Book1": {
+         "name": "book1 levev C1",
+         "description": "decsription book1 C1"
+      },
+      "Book2": {
+         "name": "book2 levev C1",
+         "description": "decsription book2 C1"
+      }
+   }
+}

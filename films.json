@@ -2,75 +2,131 @@
    "A1": {
       "Film1": {
          "name": "The Jungle Book",
-         "image": "images\\film1.png",
-         "description": "\u041ene of the best cartoons of the legendary Disney studio. If you are just starting to learnEnglish, we advise you to remember the wonderful tale of Mowgli and improve your language skills."
+         "image": "https://m.media-amazon.com/images/M/MV5BMTc3NTUzNTI4MV5BMl5BanBnXkFtZTgwNjU0NjU5NzE@._V1_FMjpg_UX1000_.jpg",
+         "description": "One of the best cartoons of the legendary Disney studio. If you are just starting tolearnEnglish, we advise you to remember the wonderful tale of Mowgli and improve your language skills."
       },
       "Film2": {
          "name": "Up",
-         "image": "images\\film2.png",
-         "description": "\u0421ute and exciting story in the Pixar studio cartoon about a jungle trip in a balloon is perfect for the A1 level."
+         "image": "https://upload.wikimedia.org/wikipedia/en/0/05/Up_%282009_film%29.jpg",
+         "description": "Cute and exciting story in the Pixar studio cartoon about a jungle trip in a balloon is perfect for the A1 level."
       },
       "Film3": {
          "name": "The Man Called Flinstone",
-         "image": "images\\film3.png",
-         "description": "A comedy cartoon, a parody of the 1966 James Bond movies, which remains just as relevant today. Simple vocabulary, excellent diction, cool plot - all important components in place."
+         "image": "https://images-na.ssl-images-amazon.com/images/I/91hCUrl3J5L._RI_.jpg",
+         "description": "A comedy cartoon, a parody of the 1966 James Bond movies, which remains just as relevanttoday. Simple vocabulary, excellent diction, cool plot - all important components in place."
       },
       "Film4": {
          "name": "Finding Nemo",
-         "image": "images\\film4.png",
-         "description": "A bright cartoon about fish life, which is loved by viewers of all ages. And the cartoon won an Oscar in 2004."
+         "image": "https://upload.wikimedia.org/wikipedia/ru/2/29/Finding_Nemo.jpg",
+         "description": "A bright cartoon about fish life, which is loved by viewers of all ages. And the cartoon wonan Oscar in 2004."
       }
    },
    "A2": {
       "Film1": {
          "name": "The Holiday.",
-         "image": "images\\film1.png",
-         "description": "Two women troubled with guy-problems swap homes in each other's countries, where they each meet a local guy and fall in love."
+         "image": "https://upload.wikimedia.org/wikipedia/ru/b/bf/The-Holiday-poster.jpg",
+         "description": "Two women troubled with guy-problems swap homes in each other's countries, where they eachmeet a local guy and fall in love."
       },
       "Film2": {
          "name": "My Big Fat Greek Wedding",
-         "image": "images\\Theholiday.png",
-         "description": "My Big Fat Greek Wedding tells the story of Toula Portokalos. She's 30 years old and still not married, which means as a nice Greek girl she's a failure."
+         "image": "https://flxt.tmsimg.com/assets/p29868_p_v10_ag.jpg",
+         "description": "Film tells the story of Toula Portokalos. She's 30 years old and still not married, which means as a nice Greek girl she's a failure."
       },
       "Film3": {
          "name": "The Lion King",
-         "image": "images\\thelionking.png",
-         "description": "Disney\u2019s film journeys to the African savanna where a future king is born. Simba idolizes his father, King Mufasa, and takes to heart his own royal destiny. "
+         "image": "https://static.posters.cz/image/1300/%D0%9F%D0%BB%D0%B0%D0%BA%D0%B0%D1%82%D0%B8/the-lion-king-simba-i97648.jpg",
+         "description": "Film journey to the African savanna where a future king is born. Simba idolizes his father,King Mufasa, and takes to heart his own royal destiny. "
       },
       "Film4": {
          "name": "The Wizard of Oz ",
-         "image": "images\\film1.png",
-         "description": "Young Dorothy Gale and her dog are swept away by a tornado from their Kansas farm to the magical Land of Oz, and embark on a quest with three new friends to see the Wizard, who can return her to her home and fulfill the others' wishes."
+         "image": "https://m.media-amazon.com/images/I/81-BVun2D2L._SL1500_.jpg",
+         "description": "Young Dorothy Gale and her dog are swept away by a tornado from their Kansas farm to magical Land of Oz, and embark on a quest with three new friends to see the Wizard, whocan return her to her home and fulfill the others' wishes."
       }
    },
    "B1": {
       "Film1": {
-         "name": "filmB1",
-         "description": "filmB1"
+         "name": "Harry Potter",
+         "image": "https://www.kino-teatr.ru/movie/poster/27108/41952.jpg",
+         "description": "Join this young wizard on his journey to discover the power that he carries within and, inthe meantime, familiarize yourself with the game of Quidditch. If you are more interested in the British accent than the American, this series of films (eight in total) is a very good option."
       },
       "Film2": {
-         "name": "2filmB1",
-         "description": "2filmB1"
+         "name": "Terminator 2",
+         "image": "https://upload.wikimedia.org/wikipedia/ru/c/ca/Terminator_poster.jpg",
+         "description": "Nobody will ever look as great as Arnold Schwarzenegger on a Harley Davidson. This cult movieis also very good for practicing your English listening while seeing explosions.Many explosions."
+      },
+      "Film3": {
+         "name": "Forrest Gump",
+         "image": "https://www.2semechki.ru/site-content/uploads/images/permmag/forestgamp_dvd.jpg",
+         "description": "With this cinematic jewel, you can test your listening skills as there are severalcharacters with very different accents that come together to tell this emotional story.Forrest is a young man from Alabama who is in love with his best friend, Jenny. In one wayor another, this boy with an IQ of 75 is always involved in the most significant events in the US from the second half of the 20th century."
+      },
+      "Film4": {
+         "name": "Men in Black",
+         "image": "https://upload.wikimedia.org/wikipedia/ru/f/fb/Men_in_Black_Poster.jpg",
+         "description": "What happens when you put a baby boomer and a boy from Generation X together in anultra-secret job?: The best movie of the ‘90s. Will Smith and Tommy Lee Jones made thebest team of the decade in this film about aliens and state secrets. Apart from entertaining, the dialogues never stop. There is speaking in almost every scene. Even thedogs talk!"
+      },
+      "Film5": {
+         "name": "Ferdinand",
+         "image": "https://upload.wikimedia.org/wikipedia/en/0/03/Ferdinand_%28film%29.png",
+         "description": "They say ‘the soft ones always go down’, but what if you are one of the soft? What do you do? Ferdinand’s story is an inspiration to all those who feel different: you have all the power you need and giving up is not an option. The way to the life you want is not easy: at times you have to think big and in case of Ferdinand – ‘think thin’.And it is also fun: you will be treated to one of the best animal dance battles ever!"
+      },
+      "Film6": {
+         "name": "The Terminal",
+         "image": "https://upload.wikimedia.org/wikipedia/uk/8/86/Movie_poster_the_terminal.jpg",
+         "description": "If you are planning a trip by plane and want to see every corner of one of the biggestairports in the world, Viktor Navorski (Tom Hanks) will be your personal guide. You’ll findout how to get around the airport and not only that."
+      },
+      "Film7": {
+         "name": "Rat Race",
+         "image": "https://upload.wikimedia.org/wikipedia/uk/9/99/Rat_Race_poster.jpg",
+         "description": "How many people would say ‘no’ to a huge sum of money? Would you resist? This hilariousfilm shows all the crazy things people can do if they see the smallest prospect of gettingrich.The star-studded cast, including Whoopi Goldberg, Cuba Gooding Jr., and Rowan Atkinson,is a guarantee of excellent performance as well as a variety of English accents you can trygetting used to."
+      },
+      "Film8": {
+         "name": "Inside Out",
+         "image": "https://upload.wikimedia.org/wikipedia/en/0/0a/Inside_Out_%282015_film%29_poster.jpg",
+         "description": "Would you like to meet Joy, Anger, Sadness, Fear and Disgust in person? Then, this cartoonis a great choice for you. It is a colourful and very vivid story of what is going oninside the head of every human being. You may well be surprised, but it is also a nicesource of learning about effective negotiations."
       }
    },
    "B2": {
       "Film1": {
-         "name": "filmB2",
-         "description": "filmB2"
+         "name": "Brené Brown: The Call to Courage",
+         "image": "https://i.pinimg.com/originals/f9/89/1d/f9891d50c994d5790ec354d6e25c8e42.png",
+         "description": "It’s a brand-new film defined as a documentary. Based on her research findings, Brené looksat shame, vulnerability and how these are related to courage which is crucial for everyoneto know. During the whole film you’ll be watching and listening only to Brené Brown herself.As an experienced speaker, she makes it a most enjoyable talk and as a learner of English you’ll have to be ready for jokes and some very quick bits."
       },
       "Film2": {
-         "name": "2filmB2",
-         "description": "2filmB2"
+         "name": "Enola Holmes",
+         "image": "https://phys-kids.com/uploads/posts/2020-10/medium/1602157475_enolaholmes_2.jpg",
+         "description": "Film full of exciting adventures and events set at the end of the 19th century. As being agirl and a woman at that time was a bit of a challenge, especially if you didn’t want to conform with the rules, Enola and her mom took a slightly different approach to education and upbringing in general. What happened in the end is only up to you to discover once youwatch it. The speech of our characters is quite quick and the language may seem formalgiven the time of the setting."
+      },
+      "Film3": {
+         "name": "Collateral Beauty",
+         "image": "https://www.game-ost.ru/static/covers_soundtracks/1/0/102088_333091.jpg",
+         "description": "An emotional story of how life can change in a second and how differently people adapt andaccept the change. Some say that such moments carry exceptional beauty, though it is up to you to decide after you have seen the film. On the whole, the characters speak quite quicklyand when emotions are running high it may well be slightly quicker. Despite this, thedialogues are distinct and if you check some of the phrases before the film, you should be prepared to enjoy the story."
+      },
+      "Film4": {
+         "name": "The Blind Side",
+         "image": "https://pastoralsj.org/images/stories/flexicontent/item_282_field_39/original/blindsidec.jpg",
+         "description": "A heart-warming story of how love and compassion change lives. Undoubtedly, it will make yousee how important it is when someone has your back. The story of Michael Oher will take youto Memphis, Tennessee and you will hear plenty of Southern accent and phrases. It is your chance to learn more about American football and the connection between career in sports andacademic achievements. Therefore, this film serves as a wonderful reminder of what it meansto be a teacher and a mentor."
       }
    },
    "C1": {
       "Film1": {
-         "name": "filmC1",
-         "description": "filmC2"
+         "name": "Mona Lisa Smile",
+         "image": "https://flxt.tmsimg.com/assets/p33568_p_v10_ac.jpg",
+         "description": "Have you ever had a teacher who has literally changed your life? What did they do to helpyou? Were you ready for the change at that time? The story of Katherine Watson is one in amillion and at the same time it is so typical for teachers who care. It is always about being in the right place at the right time, being there when they need you most."
       },
       "Film2": {
-         "name": "2filmC1",
-         "description": "2filmC1"
+         "name": "Zootopia",
+         "image": "https://images-na.ssl-images-amazon.com/images/S/pv-target-images/0ecb745d03d6656e19c12acc7fe9f7a7ba6336a0f2d2c202aff94a8335f00aae._RI_V_TTW_.jpg",
+         "description": "Choosing this film do not be misled by the fact that it is a cartoon. This story reminds somuch of real life that sometimes it gets messy, but not less exciting. With a motivating soundtrack ‘Try Everything’ performed by Shakira, you will have a lot to reflect on. You will also benefit from listening to a mixture of accents and a varying speed of speech."
+      },
+      "Film3": {
+         "name": "Ocean’s Eleven",
+         "image": "https://images-na.ssl-images-amazon.com/images/I/91u6JsydhlL._RI_.jpg",
+         "description": "It’s a whirlwind adventure spiced up with humour and some fierce competition in the world ofcasinos. As Ocean’s team is so diverse, you’ll have a great practice of various Englishaccents. Besides, if you’re learning English and sometimes feel bad about not understandingsome of the native speakers, in this story you’ll see it’s not always easy even for them tounderstand each other."
+      },
+      "Film4": {
+         "name": "Klaus",
+         "image": "https://upload.wikimedia.org/wikipedia/ru/b/b9/Klaus_cartoon.jpg",
+         "description": "Why do people smile? Can one smile change anything? What’s the connection between a smileand writing letters? This truly inspiring story of Klaus, a kind-hearted giant, who met a postman called Jesper, may give you a couple of new ideas about some of the Christmas traditions. And smiles as well."
       }
    }
 }

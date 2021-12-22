@@ -1,46 +1,162 @@
 {
    "A1": {
       "Book1": {
-         "name": "Eleanor Jupp \u2013 Ski Race",
-         "image": "images\\ski-jump.jpg",
+         "name": "Eleanor Jupp - Ski Race",
+         "image": "https://blog.yakaboo.ua/wp-content/uploads/2019/05/ski-jump.jpg",
          "description": "About lovers of skiing Rebecca and Sue, who decided to take part in the competition."
+      },
+       "Book2": {
+         "name": "Charlotte’s Web – E.B. White",
+         "image": "https://images-na.ssl-images-amazon.com/images/I/61%2B3z1o4oUL.jpg",
+         "description": "A Puffin Book - stories that last a lifetime. Wilbur the pig's life has already been saved by Fern, but when he is sold to her uncle, he realises his life is in even more danger. Enter Charlotte A. Cavatica, a beautiful large grey spider. Charlotte is determined to keep Wilbur from the chopping block, and comes up with an ingenious way to do just that. Charlotte's Web is a classic tale of friendship, bravery and some animal magic."
+      },
+       "Book3": {
+         "name": "Norman Whitney – Sara Says No!",
+         "image": "https://blog.yakaboo.ua/wp-content/uploads/2019/05/sara-says-no.jpg",
+         "description": "Everybody in Middletown likes Mr Fruit - everybody except his daughter, Sara. she doesn't like him becasue he is dishonest. Can she make him change his ways?"
+      },
+       "Book4": {
+         "name": "Harris Clare – The Umbrella",
+         "image": "https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/7/1/71zbgfpxaxl.jpg",
+         "description": "This series provides a wide variety of reading material for all learners of English. The books are retold versions of popular classics and contemporary titles as well as specially written stories."
+      },
+       "Book5": {
+         "name": "Alwyn Cox – Dangerous Journey",
+         "image": "https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/5/1/51_2_15.jpg",
+         "description": "The four members of the geological expedition cannot get out of the impenetrable forest, since the river destroyed the bridge, cutting off the only possible path. Leon, the senior in the group, begins to lose control of the situation."
       }
    },
    "A2": {
       "Book1": {
-         "name": "Eleanor Jupp \u2013 Ski Race",
-         "image": "images\\ski-jump.jpg",
-         "description": "About lovers of skiing Rebecca and Sue, who decided to take part in the competition."
+         "name": " Frank Baum – The Wonderful Wizard of Oz",
+         "image": "https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/7/1/712549_original.jpg",
+         "description": "When a cyclone hits Kansas, Dorothy and her little dog, Toto, are whisked away to the magical land of Oz. All alone in this strange world, they wonder how they'll ever get home. With their new friends, the Scarecrow, the Tin Woodman, and the Cowardly Lion, they brave many dangers and journey to the Emerald City in search of the Wonderful Wizard to ask him for his help."
+      },
+       "Book2": {
+         "name": "Lewis Caroll – Alice’s Adventures in Wonderland",
+         "image": "https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/9/7/9781840227802.jpg",
+         "description": "Tweedledum and Tweedledee, the Mad Hatter, the Cheshire Cat, the Red Queen and the White Rabbit all make their appearances, and are now familiar figures in writing, conversation and idiom. So too are Carroll's delightful verses such as The Walrus and the Carpenter and the inspired jargon of that masterly Wordsworthian parody, The Jabberwocky."
+      },
+       "Book3": {
+         "name": "Mark Twain – The Adventures of Tom Sawyer",
+         "image": "https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/5/4/54_1_44.jpg",
+         "description": "A full of humor story about the extraordinary adventures of a boy Tom, an orphan, who lives near the Mississippi."
+      },
+       "Book4": {
+         "name": "Robin Hood",
+         "image": "https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img635_2.jpg",
+         "description": "Robin Hood is the best-loved outlaw of all time. In this edition Henry Gilbert tells of the adventures of the Merry Men of Sherwood Forest - Robin himself, Little John, Friar Tuck, Will Scarlet, and Alan-a-Dale, as well as Maid Marian, good King Richard, and Robin's deadly enemies Guy of Gisborne and the evil Sheriff of Nottingham."
+      },
+       "Book5": {
+         "name": "Robert Stevenson – Treasure Island",
+         "image": "https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img607.jpg",
+         "description": "Fifteen men on the dead man's chest-Yo-ho-ho and a bottle of rum!' Treasure Island is a tale of pirates and villains, maps, treasure and shipwreck. When young Jim Hawkins finds a packet in Captain Flint's sea chest, he could not know that the map inside it would lead him to unimaginable treasure. Shipping as cabin boy on the Hispaniola, he sails with Squire Trelawney, Captain Smollett, Dr Livesey, the sinister Long John Silver and a frightening crew to Treasure Island. There, mutiny, murder and mayhem lead to a thrilling climax."
+      },
+       "Book6": {
+         "name": "Gabrielle-Suzanne Barbot de Villeneuve – Beauty and the Beast",
+         "image": "https://cdn.waterstones.com/bookjackets/large/9780/0624/9780062456212.jpg",
+         "description": "This title is based on the classic fairy tale. Kind-hearted Beauty has to go and live with a beast, but she soon realizes that behind the ugly exterior lies a person she can care for."
+      },
+       "Book7": {
+         "name": "Daniel Defoe – Robinson Crusoe",
+         "image": "",
+         "description": ""
+      },
+       "Book8": {
+         "name": "Jules Verne – Around the World in Eighty Days",
+         "image": "https://kbimages1-a.akamaihd.net/8ad3bbf0-85b9-4335-a7aa-6a218c9bf08c/1200/1200/False/around-the-world-in-eighty-days-113.jpg",
+         "description": "The hero of the novel, Phileas Fogg, bet that he would be able to circumnavigate the globe from west to east in no more than 80 days, which was at that time the maximum possible speed, given the technical capabilities of transport. Fogg's journey begins in England, then he goes to France, Egypt, India, China, Japan, America. On the way, he encounters many dangers."
       }
    },
    "B1": {
-      "Book1": {
-         "name": "Book1 level B1",
-         "description": "description book1"
+       "Book1": {
+         "name": " F. Scott Fitzgerald - The Great Gatsby ",
+         "image": "https://s.grenka.ua/promo/review/2019/11.2019/the-great-gatsby-intermediate-velikij-gehtsbi-srednij-uroven_52f_300_300-min.jpg",
+         "description": "This exemplary novel of the Jazz Age has been acclaimed by generations of readers. The story is of the fabulously wealthy Jay Gatsby and his new love for the beautiful Daisy Buchanan, of lavish parties on Long Island at a time when The New York Times noted gin was the national drink and sex the national obsession,it is an exquisitely crafted tale of America in the 1920s"
       },
-      "Book2": {
-         "name": "book2 level B1",
-         "description": "description book2"
+       "Book2": {
+         "name": " P.L. Travers - Mary Poppins",
+         "image": "https://s.grenka.ua/promo/review/2019/11.2019/mary-poppins_1f4_300_300-min.jpg",
+         "description": "Mary Poppins, the first novel in a series of children’s books written by P.L. Travers, published in 1934. The titular character is a sensible English nanny with magical powers, and the work uses mythological allusion and biting social critique to explore the fraught relationship between children and adults."
+      },
+       "Book3": {
+         "name": "James Bowen - A Street Cat Named Bob: And How He Saved My Life",
+         "image": "https://images-na.ssl-images-amazon.com/images/I/51EGx3-A-gL._SX330_BO1,204,203,200_.jpg",
+         "description": "When street musician James Bowen found an injured cat curled up in the hallway of his apartment building, he had no idea how much his life was about to change. James was living hand to mouth on the streets of London, barely making enough money to feed himself, and the last thing he needed was a pet. Yet James couldn't resist helping the strikingly intelligent but very sick animal, whom he named Bob. He slowly nursed Bob back to health and then sent the cat on his way, imagining that he would never see him again. But Bob had other ideas."
+      },
+       "Book4": {
+         "name": "Agatha Christie - The Adventure of the Italian Nobleman",
+         "image": "https://m.media-amazon.com/images/I/412gvXDqskL.jpg",
+         "description": "A locked door, a dinner part set of three and a dead body alone in the room – it can only mean another case for Poirot. From Poirot Investigates."
+      },
+       "Book5": {
+         "name": "Oscar Wilde - The Picture of Dorian Gray",
+         "image": "https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/f/i/file_1092.jpg",
+         "description": "The most famous and popular novel of English writer Oscar Wilde (1854—1900). Dorian Gray is a very attractive young man who wishes to make a link between his soul and his portrait so that the picture gets old but he stays young forever. However, not only the picture gets older instead of him — it also shows the influence of all his actions on his soul."
+      },
+       "Book6": {
+         "name": "Richard Curtis - Mr. Bean In Town ",
+         "image": "https://skyeng-frontface-backend.s3.eu-central-1.amazonaws.com/uploads/5fd4c5ad461da.jpg",
+         "description": "Mr. Bean will always find adventure for his wild little head! The eccentric eccentric continues to amaze and amuse the reader."
+      },
+       "Book7": {
+         "name": "K. Jerome - Three Men In a Boat",
+         "image": "https://skyeng-frontface-backend.s3.eu-central-1.amazonaws.com/uploads/5fd4c5ae80a88.jpg",
+         "description": "Three cheerful friends decided to go on a trip. What came of this - read the original."
+      },
+       "Book8": {
+         "name": "Bram Stoker - Dracula ",
+         "image": "https://skyeng-frontface-backend.s3.eu-central-1.amazonaws.com/uploads/5fd4c5acbf34b.jpg",
+         "description": "A chilling story of eternal love and eternal damnation: that's where all the vampire sagas of our time came from."
       }
    },
    "B2": {
-      "Book1": {
-         "name": "book1 levev B2",
-         "description": "decsription book1 b2"
+       "Book1": {
+         "name": "Аirport - Arthur Haley ",
+         "image": "https://www.bookovka.ua/571049-large_default/airport-aeroport.jpg",
+         "description": "The city, where the largest airport is located, is unexpectedly covered by a snowstorm, so all services are working in emergency mode. The experiences and conflicts of the heroes who are locked up, in their strength, turn out to be comparable to a storm raging outside."
       },
       "Book2": {
-         "name": "book2 levev B2",
-         "description": "decsription book2 b2"
+         "name": " F. Scott Fitzgerald - The Curious Case of Benjamin Button",
+         "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1331235364l/747746.jpg",
+         "description": "In 1860 Benjamin Button is born an old man and mysteriously begins aging backward. At the beginning of his life he is withered and worn, but as he continues to grow younger he embraces life -- he goes to war, runs a business, falls in love, has children, goes to college and prep school, and, as his mind begins to devolve, he attends kindergarten and eventually returns to the care of his nurse."
+      },
+       "Book3": {
+         "name": "George Orwell - 1984",
+         "image": "https://lavnik.net/wp-content/uploads/2017/03/o-o-e1489090416858.jpeg",
+         "description": "An iconic work of English literature, which must be included in the reading arsenal of every modern person. In order not to have to blush in a decent society."
+      },
+       "Book4": {
+         "name": "Dewey Gram - Gladiator ",
+         "image": "https://fobook.ru/wp-content/uploads/2015/04/Dewey_Gram_-_Gladiator-130x210.jpg",
+         "description": "Maximus is a general in the Roman army. After his last battle he wants to return to his family. But the new Emperor Commodus hates Maximus, and kills his family. Soon Maximus is a prisoner, then a slave, and finally a gladiator. When Emperor Commodus joins Maximus in the arena they fight for their lives."
+      },
+       "Book5": {
+         "name": "Richard Curtis - Four Weddings and a Funeral",
+         "image": "https://images-na.ssl-images-amazon.com/images/I/5136AR2PVHL.jpg",
+         "description": "A funny, touching, slightly frivolous book by Richard Curtis tells about the love between a British and an American against the background of four weddings and one, alas, a funeral. Is there any hope for a happy end?"
+      },
+       "Book6": {
+         "name": "Patricia Highsmith - The Talented Mr. Ripley",
+         "image": "https://m.media-amazon.com/images/I/51zazdnfdpL.jpg",
+         "description": "Tom Ripley is a 25-year-old young man who grew up without parents in an atmosphere of hatred and fear. Is it any wonder that his attitude towards the world and people is not particularly tender?"
       }
    },
    "C1": {
-      "Book1": {
-         "name": "book1 levev C1",
-         "description": "decsription book1 C1"
+       "Book1": {
+         "name": "Jane Austen -  Pride and Prejudice",
+         "image": "https://m.media-amazon.com/images/I/41Pu0iQ+pAL.jpg",
+         "description": "Elizabeth is one of five daughters in the noble but impoverished Bennett family. She is smart, beautiful, but will she be happy? When two single gentlemen settle in the neighborhood, something new enters the life of the Bennett girls: sighs, excitement, sneak glances, secret dates. Will the subject of her sighing appreciate Elizabeth's merits?"
       },
       "Book2": {
-         "name": "book2 levev C1",
-         "description": "decsription book2 C1"
+         "name": "Aldous Huxley - Brave New World",
+         "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/BraveNewWorld_FirstEdition.jpg/220px-BraveNewWorld_FirstEdition.jpg",
+         "description": "Aldous Huxley's profoundly important classic of world literature, Brave New World is a searching vision of an unequal, technologically advanced future where humans are genetically bred, socially indoctrinated, and pharmaceutically anesthetized to passively uphold an authoritarian ruling order – all at the cost of our freedom, full humanity, and perhaps also our souls."
+      },
+       "Book3": {
+         "name": "Charlotte Bronte - Jane Eyre",
+         "image": "https://almabooks.com/wp-content/uploads/2016/10/9781847493736.jpg",
+         "description": "A classic English novel about the life of a poor orphan with extraordinary strength of character, and about love that can overcome any adversity. The book, dearly loved not only in England, but throughout the world."
       }
    }
 }

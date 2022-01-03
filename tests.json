@@ -1,0 +1,648 @@
+{
+  "1": {
+    "I _____ very hard at the moment.": [
+      "1: work\n 2: am working\n 3: will work",
+      "2"
+    ],
+    "___ you from Sheffield?": [
+      "1: am\n 2: is\n 3: are",
+      "2"
+    ],
+    "It ___ Sunday today.": [
+      "1: am\n 2: is\n 3: are",
+      "2"
+    ],
+    "I ___ a football fan.": [
+      "1: am\n 2: is\n 3: are",
+      "1"
+    ],
+    "We ___ children.": [
+      "1: am\n 2: is\n 3: are",
+      "3"
+    ],
+    "The flowers ___ great.": [
+      "1: smell\n 2: smells\n 3: smelling",
+      "1"
+    ],
+    "Mr and Mrs Baker ___ on a trip to the USA to visit their cousin Anne.": [
+      "1: am\n 2: is\n 3: are",
+      "3"
+    ]
+  },
+  "2": {
+    "I'm happy ___ it.": [
+      "1: to hear\n2: hear\n3: hearing\n4: heard",
+      "1"
+    ],
+    "Everyone likes ___": [
+      "1: help\n 2: helping\n3: to be helped\n 4: be helped",
+      "3"
+    ],
+    "Sorry … you in such an uncomfortable situation.": [
+      "1: to placing\n2: to have placed\n3: placing\n4: to be placed",
+      "2"
+    ],
+    "Do you like ___ football on TV?": [
+      "1: watch\n2: watched\n3: watches\n4: watching",
+      "4"
+    ],
+    "I’m afraid of ____ mistakes.": [
+      "1: to make\n2: made\n3: make\n4: making",
+      "4"
+    ],
+    "It is important ____": [
+      "1: to win\n2: winning\n3: win\n4: won",
+      "1"
+    ]
+  },
+  "3": {
+    "I would like you ___ his invitation.": [
+      "1: accept\n2: to accept\n3: accepting",
+      "2"
+    ],
+    "Teachers make me ___ homework well.": [
+      "1: to do\n2: do\n3: doing",
+      "2"
+    ],
+    "Please, let me ___ the news and then we’ll go out.": [
+      "1: watch\n2: to watch\n3: watching",
+      "1"
+    ],
+    "I used ___ a lot when I was younger.": [
+      "1: smoke\n2: to smoke\n3: smoking",
+      "2"
+    ],
+    "I think, we’d better ___ of here.": [
+      "1: to get\n2: get\n3: getting",
+      "2"
+    ],
+    "May I ___ in? – Yes, please.": [
+      "1: to come\n2: come\n3: comming",
+      "2"
+    ],
+    "It is better ___ sure than sorry.": [
+      "1: be\n2: to be\n3: being",
+      "2"
+    ],
+    "It is up to you ___ all these rules.": [
+      "1: to learn\n2: learn\n3: learning",
+      "1"
+    ],
+    "We decided ___ extra risks.": [
+      "1: to not take\n2: not to take\n3: not take",
+      "2"
+    ]
+  },
+  "4": {
+    "Last year, Mrs. Simon volunteered at the local hospital. She used to ___ treats for the patients on Mondays.": [
+      "1: brought\n2: bring \n3: brings",
+      "2"
+    ],
+    "I ___ studying when my rude neighbors interrupted me with their loud music.": [
+      "1: be\n2: was \n3: been",
+      "2"
+    ],
+    "I need you to ___ me to work today. My car isn't running.": [
+      "1: drive \n2: drove\n3: driven",
+      "1"
+    ],
+    "Tory slowly ___ around the corner because she wanted to scare her younger brother.": [
+      "1: crept \n2: creep\n3: creeping",
+      "1"
+    ],
+    "I ___ you should quit your job and find a career that you enjoy.": [
+      "1: think \n2: thinks\n3: thought",
+      "1"
+    ],
+    "Laura has ___ her own hair for the past 15 years. It usually looks great.": [
+      "1: cut \n2: cuts\n3: cutting",
+      "1"
+    ],
+    "Please don't ___ that booklet I gave you, because I want to keep it for future reference.": [
+      "1: bent\n2: bends\n3: bend ",
+      "3"
+    ],
+    "Kathy ___ how to change the oil in her car last weekend.": [
+      "1: learn\n2: learned \n3: learning",
+      "1"
+    ],
+    "My father ___ our home in 1990, and he designed it as well.": [
+      "1: builds\n2: built \n3: building",
+      "2"
+       ],
+    "Rose was surprised when she stepped into the kitchen because someone had ___ all of the pies.": [
+      "1: ate\n2: eat\n3: eaten ",
+      "3"
+       ]
+  },
+  "5": {
+    "I tried to ____ all day long, but nobody answered the phone.": [
+      "1: get by\n2: get along with\n3: get through\n4: get on",
+      "3"
+    ],
+    "He can’t ____ his mind about what to do next.": [
+      "1: make out\n2: make in\n3: make with\n4: make up",
+      "4"
+    ],
+    "Our water supplies ____ so we had to refill them.": [
+      "1: gave away\n2: gave out\n3: gave in\n4: gave up",
+      "2"
+    ],
+    "\"Get over something\" means:": [
+      "1: to do something unpleasant to someone\n 2: to feel better after being unhappy or sick",
+      "2"
+    ],
+    "\"Stress somebody out\" means:": [
+      "1: make somebody feel nervous and worried\n2: make somebody feel happy and satisfied",
+      "1"
+    ],
+    "\"Run out of time\" means:": [
+      "1: have plenty of time left\n2: have not much time left",
+      "2"
+    ],
+    "\"Shake something off\" means:": [
+      "1: to get rid of something\n2: to stop doing something",
+      "1"
+    ],
+    "\"Wake somebody up\" means:": [
+      "1: to cause somebody to stand up\n2: to cause somebody to awaken",
+      "1"
+    ],
+    "\"Run out of time\" means:": [
+      "1: have plenty of time left\n2: have not much time left",
+      "1"
+    ],
+    "My parents often argue, but we always ____ quickly.": [
+      "1: make in\n2: make off\n3: make out\n4: make up",
+      "4"
+    ],
+    "I’m going to ____ my girlfriend ____ tonight.": [
+      "1: take / down\n2: take / off\n3: take / up\n4: take / out",
+      "4"
+    ],
+    "That shop ____ free candies to all children.": [
+      "1: gave in\n2: gave up\n3: gave back\n4: gave away",
+      "4"
+    ],
+    "Would you please ____ my money?": [
+      "1: give up\n2: give in\n3: give away\n4: give back",
+      "4"
+    ],
+    "I am thinking about ____ football or basketball.": [
+      "1: taking in\n2: taking down\n3: taking over\n4: taking up",
+      "4"
+    ]
+  },
+  "6": {
+    "I usually make ____ when I roast a turkey. (This is a non-count noun.)": [
+      "1: cups\n2: lights\n3: plates\n4: gravy",
+      "4"
+    ],
+    "I want to climb that large ____ Do you think I can do it? (This is a count noun.)": [
+      "1: beef\n2: mountain\n3: heat\n4: sand",
+      "2"
+    ],
+    "There is a lot of ____ coming out of that building. I think there's a fire!": [
+      "1: person\n2: smoke\n3: paws\n4: boxes",
+      "2"
+    ],
+    "My grandfather is full of ____ He is very knowledgeable and I like him a lot.": [
+      "1: tests\n2: tools\n3: wisdom\n4: eyes",
+      "4"
+    ],
+    "We live in a rainforest region, so there is a lot of ____ on the ground every morning. ": [
+      "1: rugs\n2: tubs\n3: snacks\n4: dew",
+      "4"
+    ],
+    "You have to ask your mother for ____ before you can come camping with our family. You can come if she says it's OK with her.": [
+      "1: tents\n2: boots\n3: spots\n4: permission",
+      "4"
+    ],
+    "I need one more ____ I will be taking two of these on my trip to Mexico.": [
+      "1: suitcase\n2: soap\n3: chocolate\n4: concrete",
+      "1"
+    ],
+    "Some people say that ____ is the best medicine.": [
+      "1: laughter\n2: eraser\n3: boots\n4: bottles",
+      "1"
+    ],
+    "I saw a lot of ____ during the thunderstorm last night. All of the bolts seemed nearby and that was kind of scary.": [
+      "1: bulbs\n2: lightning\n3: needles\n4: drops",
+      "2"
+    ],
+    "I have to buy some ____ I want to change the colour of my bedroom walls.": [
+      "1: paint\n2: cooler\n3: picture\n4: lawnmower",
+      "1"
+    ],
+    "The police officers used tear ____ on the violent protestors.": [
+      "1: shirts\n2: trucks\n3: phones\n4: gas",
+      "4"
+    ],
+    "I have to buy some allergy ____ because there is a lot of pollen in the air at this time of year.": [
+      "1: snow\n2: pills\n3: gas\n4: thunder",
+      "2"
+    ],
+    "I like to use maple ____ on my pancakes. It's delicious. ": [
+      "1: shirts\n2: syrup\n3: phones\n4: gas",
+      "2"
+    ],
+    "I am watching my favorite program on my ____ ": [
+      "1: cloth\n2: oil\n3: steam\n4: television",
+      "4"
+    ]
+  },
+  "7": {
+    "Half of ____ population of American countries is unemployed.": [
+      "1: the\n2: a\n3: –",
+      "1"
+    ],
+    "Would you like ____ cup of tea?": [
+      "1: the\n2: –\n3: a",
+      "3"
+    ],
+    "It’s too high ____ price! I can’t afford to buy it.": [
+      "1: a\n2: the\n3: an",
+      "1"
+    ],
+    "____ Princess Diana passed away at ____ very early age.": [
+      "1: The / the\n2: The / a\n3: – / a",
+      "3"
+    ],
+    "This is ____ nice picture.": [
+      "1: an\n2: a\n3: the",
+      "2"
+    ],
+    "What’s happened, ____ captain?": [
+      "1: –\n2: the\n3: a",
+      "1"
+    ],
+    "I am from ____ Ukraine.": [
+      "1: –\n2: an\n3: the",
+      "1"
+    ],
+    "My favorite book is “____ Spartacus”.": [
+      "1: –\n2: The\n3: A",
+      "1"
+    ],
+    "This is ____ shop I told you about.": [
+      "1: a\n2: the\n3: –",
+      "2"
+    ],
+    "I’d like to buy ____ new coffee-machine.": [
+      "1: the\n2: a\n3: an",
+      "2"
+    ],
+    "“Would you like some coffee?” “Yes, with ____ double cream, please!”": [
+      "1: a\n2: the\n3: -",
+      "3"
+    ],
+    "Oscar Wilde, ____ father of Aesthetic movement, was ____ person of paradoxes.": [
+      "1: a / a\n2: the / an\n3: the / the",
+      "3"
+    ],
+    "If you take ____ right turn you’ll get lost!": [
+      "1: –\n2: the\n3: a",
+      "2"
+    ],
+    "____ Queen is ____ very popular rock-group.": [
+      "1: The / a\n2: – / a\n3: The / the",
+      "2"
+    ],
+    "This is ____ most interesting book I have ever read.": [
+      "1: –\n2: the\n3: a",
+      "2"
+    ],
+    "___ doctor should be calm and patient": [
+      "1: A\n2: The\n3: –",
+      "1"
+    ],
+    "He was ____ honest man that is why people liked him.": [
+      "1: the\n2: an\n3: a",
+      "2"
+    ],
+    "His birthday is on ____ 2nd of April.": [
+      "1: –\n2: the\n3: a",
+      "2"
+    ]
+  },
+   "8": {
+      "He is not energetic and alert right now. He is very tired and ____.": [
+         "1: exhausted\n2: watchful\n3: ready\n4: aware",
+         "1"
+      ],
+      "She is not ugly. In fact, she is the opposite of that. She is very ____.": [
+         "1: sociable\n2: awake\n3: beautiful\n4: lonely",
+         "3"
+      ],
+       "He is not sleepy today. Rather, he is very ____ and attentive.": [
+         "1: alert\n2: fancy\n3: tall\n4: cloudy",
+         "1"
+      ],
+       "That painting is not real. It is a copy so it's ____.": [
+         "1: sociable\n2: fake\n3: breakable\n4: tiny",
+         "2"
+      ],
+      "The color you chose for that wall is not dark. It's very ____ and bright in color.": [
+         "1: light\n2: dim\n3: evil\n4: shadowy",
+         "1"
+      ],
+      "He is not weak and frail. He is very ____.": [
+         "1: puny\n2: tired\n3: feeble\n4: strong",
+         "4"
+      ],
+      "There are too many people here today. It's too ____.": [
+         "1: empty\n2: homely\n3: lonesome\n4: crowded",
+         "4"
+      ],
+      "He is really daring and loves exciting, new escapades. He is very ____.": [
+         "1: scared\n2: sleepy\n3: adventurous\n4: timid",
+         "3"
+      ],
+      "She is not calm and happy. She is annoyed and ____.": [
+         "1: angry\n2: docile\n3: energetic\n4: peaceful",
+         "1"
+      ],
+      "He is not tall enough to ride the roller coaster yet. He is too ____.": [
+         "1: dull\n2: short\n3: high\n4: bright",
+         "2"
+      ],
+      "Your baby is so cute. He is ____.": [
+         "1: dim\n2: cautious\n3: adorable\n4: filthy",
+         "3"
+      ]
+   },
+   "9": {
+      "She doesn’t like Indian food. – Really? I don’t like it ____.": [
+         "1: either\n2: too\n3: neither\n4: also",
+         "1"
+      ],
+      "She is ... good to be true!": [
+         "1: either\n2: also\n3: too\n4: so ",
+         "3"
+      ],
+      "I am not ____ a fool to believe him.": [
+         "1: also\n2: so\n3: such\n4: either",
+         "3"
+      ],
+      "Our teacher is great! I like her! – Yes, she is. I like her ____.": [
+         "1: neither\n2: either\n3: too\n4: also",
+         "3"
+      ],
+      "He hasn’t heard me ____.": [
+         "1: too\n2: also\n3: either\n4: neither",
+         "3"
+      ],
+      "Please, don’t drive ____ fast! I am afraid of speed.": [
+         "1: also\n2: either\n3: so\n4: neither",
+         "3"
+      ],
+      "____ of the films appealed to me. They were really boring.": [
+         "1: Either\n2:Also\n3: Too\n4: Neither ",
+         "4"
+      ],
+      "There is no other way! You are ____ with us or against us!": [
+         "1: also\n2: neither\n3: too\n4: either ",
+         "4"
+      ],
+      "Do you have a flat or a room? – ____ I have a detached house.": [
+         "1: Also.\n2: Neither.\n3: Too.\n4: Either.",
+         "2"
+      ],
+      "The rain was ____ strong that I barely could see my hands!": [
+         "1: either\n2: also\n3: so\n4: neither ",
+         "3"
+      ],
+      "He didn’t like the film. It was ____ a boring story!": [
+         "1: such\n2: so\n3: either\n4: also",
+         "1"
+      ],
+      "I am the one child in my family. I have ____ brothers, ____ sisters.": [
+         "1: either, or\n2: too, many\n3: also, and\n4: neither, nor",
+         "4"
+      ]
+   },
+   "10": {
+      "I wanted to visit my grandmother last week ____ she had an accident and had to be taken to hospital.": [
+         "1: so\n2: but\n3: or",
+         "2"
+      ],
+      "I wanted to eat fish for lunch ____ the fish and chip shop had closed for the day.": [
+         "1: so\n2: or\n3: but",
+         "3"
+      ],
+       "My brother wanted to buy a novel ____ he went to the book store after he finished work.": [
+         "1: but\n2: so\n3: or",
+         "2"
+      ],
+       "We will visit Australia ____ New Zealand during our next vacation.": [
+         "1: and\n2: but\n3: so",
+         "1"
+      ],
+      "I wanted to eat sushi for dinner ____ I went to a Japanese restaurant.": [
+         "1: or\n2: so\n3: but",
+         "2"
+      ],
+      "I am going to do my homework ____ take a shower when I get home from school.": [
+         "1: and\n2: so\n3: but",
+         "1"
+      ],
+      "____ you look at it, it’s a nagging problem of the 21st century.": [
+         "1: However\n2: Despite\n3: Though",
+         "1"
+      ],
+      "My father wanted to watch a soccer match on television ____ my mother was already watching another program.": [
+         "1: and\n2: so\n3: but",
+         "3"
+      ],
+      "He can’t help you ____ you tell him what really happened.": [
+         "1: unless\n2: even\n3: if",
+         "1"
+      ],
+      "Have you seen ____ heard the latest musical by Andrew Lloyd Webber?": [
+         "1: and\n2: so\n3: or",
+         "3"
+      ]
+   },
+   "11": {
+      "His father always wanted his children to look after ____ and do what they wanted.": [
+         "1: herself\n2: ourselves\n3: themselves",
+         "3"
+      ],
+      "The trouble was that Icarus always wanted to put ____ into danger.": [
+         "1: himself\n2: itself\n3: herself",
+         "1"
+      ],
+      "The car to ____ you are referring happens to be mine!": [
+         "1: which\n2: that\n3: whom",
+         "1"
+      ],
+      "In that case just look at the table and tell ____ what you see.": [
+         "1: my\n2: me\n3: I",
+         "2"
+      ],
+      "Of course I did. I gave ____ back on Tuesday.": [
+         "1: them\n2: it\n3: its",
+         "2"
+      ],
+      "Excuse me but shouldn't you say to ____ does that car belong?": [
+         "1: whom\n2: that\n3: which",
+         "1"
+      ],
+      "____ do you think would have a car like that?": [
+         "1: Whom\n2: Who\n3: That",
+         "2"
+      ],
+      "Icarus said he would try and he promised his father: I will not injure ____.": [
+         "1: ourselves\n2: yourself\n3: myself",
+         "3"
+      ],
+      "I find that difficult to believe. Do you trust ____?": [
+         "1: his\n2: me\n3: my",
+         "2"
+      ],
+      "His father said again and again if we don't take care, we'd hurt ____.": [
+         "1: themselves\n2: yourselves\n3: ourselves",
+         "3"
+      ],
+      "Once there was a young man who called ____ Icarus.": [
+         "1: himself\n2: herself\n3: myselfh",
+         "1"
+      ],
+      "He doesn't trust ____?": [
+         "1: it\n2: me\n3: I",
+         "2"
+      ],
+      "Well I think you're being very unfair to ____.": [
+         "1: us\n2: our\n3: ours",
+         "1"
+      ],
+      "So did you give the book to ____?": [
+         "1: him\n2: his\n3: he",
+         "1"
+      ],
+      "Oh dear, I can see ____ That must be the book I haven't given back.": [
+         "1: it\n2: him\n3: them",
+         "1"
+      ]
+   },
+   "12": {
+      "_____! You're stepping on my foot. (expressing pain)": [
+         "1: Ah\n2: Oh\n3: Ouch\n4: Hmmm\n5: Well",
+         "3"
+      ],
+      "Oh _____! Does it hurt? (expressing pity)": [
+         "1: Er\n2: Dear\n3: Eh\n4: Hmmm",
+         "2"
+      ],
+      "_____, that seems good. (expressing pleasure)": [
+         "1: Ah\n2: Er\n3: Hmmm\n4: Hey\n5: O",
+         "1"
+      ],
+      "_____, she's dead now. (expressing grief or pity)": [
+         "1: Oh\n2: Er\n3: Hay\n4: Alas\n5: Ah",
+         "4"
+      ],
+      "It's hot today. _____? I said it's hot today. (asking for repetition)": [
+         "1: Yow\n2: Oh\n3: Eh\n4: Yeah\n5: Hmmm",
+         "3"
+      ],
+      "Lima is the capital of ___ Peru. (expressing hesitation)": [
+         "1: Hmmm\n2: Er\n3: Yow\n4: Yhup\n5: Hey",
+         "2"
+      ]
+   },
+   "13": {
+      "Don't touch your sister's clothing. Those sweaters are ... and she'll be very angry if she finds you wearing them without permission.": [
+         "1: her\n2: theirs\n3: hers\n4: his",
+         "3"
+      ],
+      "This house is ... It's not yours.": [
+         "1: us\n2: mine\n3: me\n4: my",
+         "2"
+      ],
+      "I really love ... house. I'm so glad we bought it.": [
+         "1: us\n2: our\n3: we\n4: they",
+         "2"
+      ],
+      "Those kids should know better. ... shouldn't tease that boy anymore.": [
+         "1: Their\n2: They\n3: We\n4: Our",
+         "2"
+      ],
+      "Where is ... hockey stick? You can't play hockey without it.": [
+         "1: your\n2: mine\n3: him\n4: yours",
+         "1"
+      ],
+      "Martha is an outstanding chef. ....... makes great food!": [
+         "1: Hers\n2: Her\n3: Herself\n4: She",
+         "4"
+      ]
+   },
+   "14": {
+      "We can use a reciprocal pronoun when each of two or more people acts in _______ towards the other": [
+         "1:  a different way\n2: the same way\n3: the opposite way",
+         "2"
+      ],
+      "Which can correctly fill the gap? \"It's a close neighbourhood. They all know _______ really well.\"": [
+         "1:  each other\n2: one another\n3: each other OR one another",
+         "3"
+      ],
+      "If Cathy saw Steve and Steve didn't see Cathy, can we say they saw each other?": [
+         "1: Yes\n2: No\n3: Maybe",
+         "2"
+      ],
+      "Ron and I love ___": [
+         "1: each other\n2: ourselves\n3: themselves\n4: yourselves",
+         "1"
+      ],
+      "They met ___ again.": [
+        "1: each other\n2: ourselves\n3: themselves\n4: yourselves",
+         "1"
+      ],
+      "Neil and I trust ___": [
+         "1: each other\n2: ourselves\n3: themselves\n4: yourselves",
+         "1"
+      ],
+      "You should try it ___": [
+         "1: each other\n2: ourselves\n3: themselves\n4: yourselves",
+         "4"
+      ],
+      "They cooked pizza ___": [
+         "1: each other\n2: ourselves\n3: themselves\n4: yourselves",
+         "3"
+      ],
+      "You must finish this ___": [
+         "1: each other\n2: ourselves\n3: themselves\n4: yourselves",
+         "4"
+      ],
+      "Cats and dogs hate ___": [
+         "1: each other\n2: ourselves\n3: themselves\n4: yourselves",
+         "1"
+      ]
+   },
+   "15": {
+      "I am 1.9 cm ____ than you are.": [
+         "1: tallier\n2: taller\n3: more taller\n4: tallest",
+         "2"
+      ],
+      "I enjoy living in the country. It’s a lot ____ than the city.": [
+         "1: the most peaceful\n2: peacefulier\n3: many peaceful\n4: more peaceful",
+         "4"
+      ],
+      "In my opinion the tiger is ____ animal of all.": [
+         "1: the most dangerous\n2: more dangerous\n3: the dangeroustest\n4: very dangerous",
+         "1"
+      ],
+      "The noise was getting ____ until I could not bear it any longer.": [
+         "1: the loudest\n2: louder and louder\n3: loudest and loudest\n4: much more louder and louder",
+         "2"
+      ],
+      "For ____ information do not hesitate to call our assistant.": [
+         "1: further\n2: furthest\n3: fastest\n4: farther",
+         "1"
+      ],
+      "My best friend is ____ than me.": [
+         "1: older\n2: more older\n3: the oldest\n4: elder",
+         "1"
+      ]
+   }
+}

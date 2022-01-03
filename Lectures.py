@@ -1,13 +1,16 @@
-data = {"lecture1": ["Теоретичний матеріал лекції 1", "image1", "audio1"],
-        "lecture2": ["Теоретичний матеріал лекції 2", "image2", "audio2"]}
+import json
+with open("lectures.json", 'r', encoding="utf-8") as file:
+    data = json.load(file)
 
 
 class Lectures:
     def __init__(self, lecture=None):
-        self.lecture = data[lecture][0]
-        self.image = data[lecture][1]
-        self.audio = data[lecture][2]
+        self.name = data[lecture]["name"]
+        self.text = data[lecture]["text"]
+        self.image = data[lecture]["image"]
+        self.audio = None
         self.test = "test"
+        self.index = int(lecture)
 
     def __str__(self):
-        return f'{self.lecture}\n{self.image}\n{self.audio}\n{self.test}'
+        return f'\b{self.name}\b\n\n{self.text}'

@@ -3,7 +3,7 @@ import json
 
 
 def load_questions():
-    with open("tests.json", 'r', encoding="utf-8") as file:
+    with open("jsonFiles/tests.json", 'r', encoding="utf-8") as file:
         questions = json.load(file)
         return questions
 

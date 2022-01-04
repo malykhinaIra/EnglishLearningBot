@@ -11,7 +11,7 @@ from Recomendations import *
 from Test import *
 from transliterate.decorators import transliterate_function
 
-bot = telebot.TeleBot('2008513279:AAGOHdqtTrJZ4w2aZkGm8RGLwemvdvSpNOw')
+bot = telebot.TeleBot('token')
 
 
 @bot.message_handler(commands="start")

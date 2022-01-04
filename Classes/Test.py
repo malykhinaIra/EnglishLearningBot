@@ -1,5 +1,6 @@
 import random
 import json
+from Interfaces.ITest import ITest
 
 
 def load_questions():
@@ -8,7 +9,7 @@ def load_questions():
         return questions
 
 
-class Test:
+class Test(ITest):
     def __init__(self, topic=None):
         self.topic = topic
         if not self.topic:
@@ -23,7 +24,6 @@ class Test:
         if answer in self.variants:
             self.score += 1
             return f'Correct'
-
         else:
             return f'Wrong, correct answer is {self.variants[1]}'
 

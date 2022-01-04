@@ -2,7 +2,7 @@ import random
 import json
 
 def load_facts():
-    with open("facts.json", 'r', encoding="utf-8") as file:
+    with open("jsonFiles/facts.json", 'r', encoding="utf-8") as file:
         fun_facts = json.load(file)
         return fun_facts
 

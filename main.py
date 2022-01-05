@@ -1,21 +1,23 @@
-import telebot
-from aiogram.types import CallbackQuery
-from telebot import types
-from Facts import Facts
+import asyncio
+
+from Recomendations import *
 from Games import *
 from Lectures import *
-from Recomendations import *
 from Test import *
-from transliterate.decorators import transliterate_function
-import keyboards
+import telebot
+from telebot import types
 
 bot = telebot.TeleBot('token')
+bot.__setattr__('windows', dict)
 
 
 @bot.message_handler(commands="start")
 def cmd_start(message):
     bot.reply_to(message, "Привіт, " + message.from_user.first_name + "! Я - бот для вивчення англійської.")
-    bot.send_message(message.from_user.id, "Оберіть з наступних опцій:", reply_markup=[keyboards.MainKeyboard.keyboard])
+    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
+    keyboard.add(*[types.KeyboardButton(name) for name in ['Тести', 'Лекції']])
+    keyboard.add(*[types.KeyboardButton(name) for name in ['Ігри', 'Що подивитись/почитати?']])
+    bot.send_message(message.from_user.id, "Оберіть з наступних опцій:", reply_markup=keyboard)
 
 
 @bot.message_handler(commands="help")
@@ -25,139 +27,85 @@ def cmd_help(message):
 
 @bot.message_handler(func=lambda mes: True)
 def incorrect_cmd(message):
+    keyboard = types.InlineKeyboardMarkup()
     if message.text == "Ігри":
-        bot.send_message(message.from_user.id, "Обери гру:", reply_markup=[keyboards.GameKeyboard.keyboard])
+        key_word = types.InlineKeyboardButton(text='Слова', callback_data='words')
+        key_cipher = types.InlineKeyboardButton(text='Розшифруй слово', callback_data='cipher')
+        key_translate = types.InlineKeyboardButton(text='Перекладач', callback_data='translate')
+        key_riddles = types.InlineKeyboardButton(text='Загадки', callback_data='riddles')
+        keyboard.add(key_word)
+        keyboard.add(key_cipher)
+        keyboard.add(key_translate)
+        keyboard.add(key_riddles)
+        bot.send_message(message.from_user.id, "Обери гру:", reply_markup=keyboard)
     elif message.text == "Лекції":
-        bot.send_message(message.from_user.id, "Оберіть з наступних лекцій:",
-                         reply_markup=[keyboards.LectionsKeyboard.keyboard])
+        key_lecture1 = types.InlineKeyboardButton(text='1. Англійський іменник', callback_data='lecture1')
+        keyboard.add(key_lecture1)
+        key_lecture2 = types.InlineKeyboardButton(text='2. Англійський прикметник', callback_data='lecture2')
+        keyboard.add(key_lecture2)
+        bot.send_message(message.from_user.id, "Оберіть з наступних лекцій:", reply_markup=keyboard)
     elif message.text == "Що подивитись/почитати?":
-        bot.send_message(message.from_user.id, "Ти знаєш свій рівень англійської?",
-                         reply_markup=[keyboards.LevelKeyboard.keyboard])
+        url_button = types.InlineKeyboardButton(text="Тест на рівень англійської",
+                                                url="https://talkstudio.com.ua/placement-test/")
+        key_level = types.InlineKeyboardButton(text='Я знаю свій рівень:', callback_data='answer')
+        keyboard.add(url_button)
+        keyboard.add(key_level)
+        bot.send_message(message.from_user.id, "Ти знаєш свій рівень англійської?", reply_markup=keyboard)
     elif message.text == "Тести":
-        bot.send_message(message.from_user.id, "Дай 5 правильних відповідей і отримай бонус",
-                         reply_markup=[keyboards.TestKeyboard.keyboard])
+        bot.send_message(message.from_user.id, Test())
     else:
         bot.reply_to(message, "Не можу зрозуміти Ваше повідомлення.\n Введіть /help.")
 
 
-level = ""
-a = 5
-test = Test()
-score = 0
-isLection = False
-count = 0
-
-
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
-    global level
-    level = translit(message.text)
-    levels = ["A1", "A2", "B1", "B2", "C1"]
-    if level in levels:
-        bot.send_message(message.chat.id, "Ваш рівень: " + level)
-        bot.send_message(message.from_user.id, "Що ви хочете отримати?:",
-                         reply_markup=[keyboards.RecommendKeyboard.keyboard])
+    if issubclass(bot.__getattribute__('windows')[message.chat.id], Game):
+        if message.text == bot.__getattribute__('windows')[message.chat.id].right_answer:
+            bot.__getattribute__('windows')[message.chat.id].exit(True)
+        else:
+            bot.send_message(message.chat.id, 'Не правильно')
     else:
-        bot.send_message(message.chat.id, "Невірно введений рівень")
-        bot.register_next_step_handler(message, handle_text)
-        bot.send_message(message.chat.id, "Введіть ваш рівень англійської: ")
-
-
-used_tests = []
+        level = message.text
+        levels = ["A1", "A2", "B1", "B2", "C1"]
+        if level in levels:
+            bot.send_message(message.chat.id, "Ваш рівень: " + level)
+            bot.send_message(message.chat.id, Recomendations(level))
+        else:
+            bot.send_message(message.chat.id, "Невірно введений рівень")
+            bot.register_next_step_handler(message, handle_text)
+            bot.send_message(message.chat.id, "Введіть ваш рівень англійської: ")
 
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_worker(call):
-    global used_tests
-    keyboard = types.InlineKeyboardMarkup()
-    global a, test, isLection
     dict_game = {"words": FirstLetterGame(), "cipher": MixGame(), "translate": TranslatorGame(),
                  "riddles": PuzzleGame()}
-    list_recommend = ["film", "book"]
-    if call.data == "answer":
+    window = bot.__getattribute__('windows')[call.from_user.id]
+    # if issubclass(window, Game):
+    if call.data == 'start':
+        window.start()
+        while window.is_started:
+            bot.register_next_step_handler(call.message, handle_text)
+    elif call.data == 'rules':
+        bot.send_message(call.from_user.id, window.rules)
+    elif call.data == 'difficulty':
+        call.from_user.id, window.change_difficulty()
+    elif call.data == 'back':
+        window = None
+        incorrect_cmd(message=bot.send_message(call.from_user.id, 'Ігри'))
+    # else:
+    # dict_game = {"words": FirstLetterGame(), "cipher": MixGame(), "translate": TranslatorGame(),
+    #              "riddles": PuzzleGame()}
+    elif call.data == "answer":
         bot.register_next_step_handler(call.message, handle_text)
         bot.send_message(call.message.chat.id, "Введіть ваш рівень англійської: ")
-    elif call.data == "tests":
-        if isLection:
-            test = Test(test.topic)
-        else:
-            test = Test()
-        while test.questions in used_tests:
-            if isLection:
-                test = Test(test.topic)
-            else:
-                test = Test()
-        used_tests.append(test.questions)
-        bot.send_message(call.message.chat.id, test)
-        bot.send_message(call.message.chat.id, "Введіть відповідь: ")
-        bot.register_next_step_handler(call.message, test_handler)
     elif call.data in dict_game:
-        bot.send_message(call.message.chat.id, dict_game[call.data])
+        bot.__getattribute__('windows')[call.from_user.id] = dict_game[call.data]()
+        bot.send_message(call.from_user.id, 'меню гри: ' + call.data, reply_markup= \
+            bot.__getattribute__('windows')[call.from_user.id].get_keyboard())
     elif call.data in data.keys():
         lecture = Lectures(call.data)
-        if len(str(lecture)) > 4096:
-            for x in range(0, len(str(lecture)), 4096):
-                bot.send_message(call.message.chat.id, str(lecture)[x:x + 4096])
-        else:
-            bot.send_message(call.message.chat.id, lecture)
-        bot.send_photo(call.message.chat.id, lecture.image)
-        test = Test(lecture.index)
-        isLection = True
-        bot.send_message(call.message.chat.id, "Для засвоєння матеріалу пройдіть короткий тест за темою лекції",
-                         reply_markup=[keyboards.TestKeyboard.keyboard])
-    elif call.data == "◀":
-        a -= 10
-        if a < 0:
-            a = 0
-        for i in range(5):
-            a += 1
-            lecture = Lectures(str(a))
-            keyboard.add(types.InlineKeyboardButton(text=lecture.name, callback_data=lecture.index))
-        keyboard.add(*[types.InlineKeyboardButton(name, callback_data=name) for name in ['◀', '▶']])
-        bot.edit_message_reply_markup(call.message.chat.id, call.message.message_id, reply_markup=keyboard)
-    elif call.data == "▶":
-        if a > 10:
-            a = 10
-        for i in range(5):
-            a += 1
-            lecture = Lectures(str(a))
-            keyboard.add(types.InlineKeyboardButton(text=lecture.name, callback_data=lecture.index))
-        keyboard.add(*[types.InlineKeyboardButton(name, callback_data=name) for name in ['◀', '▶']])
-        bot.edit_message_reply_markup(call.message.chat.id, call.message.message_id, reply_markup=keyboard)
-    elif call.data in list_recommend:
-        recommend = get_recommend(call.data, level)
-        bot.send_photo(call.message.chat.id, recommend.image(), caption=recommend.description())
+        bot.send_message(call.message.chat.id, lecture)
 
 
-@transliterate_function(language_code='ru', reversed=True)
-def translit(text):
-    return text.upper()
-
-
-@bot.message_handler(content_types=['text'])
-def test_handler(message):
-    global score, test, count, isLection
-    answer_quest = message.text
-    if answer_quest in ['Тести', "Лекції", "Ігри", "Що подивитись/почитати?"]:
-        score = 0
-        count = 0
-        incorrect_cmd(message)
-        return
-    bot.send_message(message.chat.id, test.passing_test(answer_quest))
-    score += test.score
-    count += 1
-    if count == 5:
-        used_tests.clear()
-        bot.send_message(message.chat.id, f"Your score: {score}")
-        if score == 5:
-            fact = Facts()
-            bot.send_message(message.chat.id, f"Fun fact: {fact}")
-        score = 0
-        count = 0
-        isLection = False
-        return
-    callback_worker(CallbackQuery(data='tests', message=message))
-
-
-if __name__ == "__main__":
-    bot.polling(none_stop=True, interval=0)
+bot.polling(none_stop=True, interval=0)

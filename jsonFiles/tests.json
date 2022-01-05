@@ -156,6 +156,7 @@
       "1: make somebody feel nervous and worried\n2: make somebody feel happy and satisfied",
       "1"
     ],
+
     "\"Run out of time\" means:": [
       "1: have plenty of time left\n2: have not much time left",
       "2"
@@ -166,11 +167,7 @@
     ],
     "\"Wake somebody up\" means:": [
       "1: to cause somebody to stand up\n2: to cause somebody to awaken",
-      "1"
-    ],
-    "\"Run out of time\" means:": [
-      "1: have plenty of time left\n2: have not much time left",
-      "1"
+      "2"
     ],
     "My parents often argue, but we always ____ quickly.": [
       "1: make in\n2: make off\n3: make out\n4: make up",

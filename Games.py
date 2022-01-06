@@ -1,10 +1,17 @@
-from threading import Thread
 from abc import abstractmethod
 from telebot import *
+from Interfaces.IPage import IPage
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
-class Game:
+class Game(IPage):
     """abstract class for game"""
+
+    __keyboard = InlineKeyboardMarkup()
+    __keyboard.add(InlineKeyboardButton(text="Слова", callback_data="words"))
+    __keyboard.add(InlineKeyboardButton(text="Розшифруй слово", callback_data="cipher"))
+    __keyboard.add(InlineKeyboardButton(text="Перекладач", callback_data="translate"))
+    __keyboard.add(InlineKeyboardButton(text="Загадки", callback_data="riddles"))
 
     def __init__(self, bot, user_id):
         self.__difficulty = 'середня'
@@ -13,11 +20,13 @@ class Game:
         self.__bot = bot
         self.__user_id = user_id
         self.__right_answer = ''
-        self.__timer_thread = threading.Thread(self.timer())
+        self.__timer_thread = None
         keyboard = types.InlineKeyboardMarkup()
         keyboard.add(types.InlineKeyboardButton(text="почати", callback_data="start"))
         keyboard.add(types.InlineKeyboardButton(text="правила", callback_data="rules"))
-        keyboard.add(types.InlineKeyboardButton(text="важкість: " + self.__difficulty, callback_data="difficulty"))
+        self.__difficulty_keyboard = types.InlineKeyboardButton(text="важкість: " + self.__difficulty, \
+                                                                callback_data="difficulty")
+        keyboard.add(self.__difficulty_keyboard)
         # keyboard.add(types.InlineKeyboardButton(text="статистика", callback_data="statistics"))
         keyboard.add(types.InlineKeyboardButton(text="назад", callback_data="back"))
         self.__keyboard = keyboard
@@ -25,20 +34,18 @@ class Game:
     def start(self):
         self.__is_started = True
         self.__right_answer = 'yes'
+        self.__timer_thread = threading.Thread(self.timer())
         self.__timer_thread.start()
 
     def timer(self):
         time_message = self.__bot.send_message(self.__user_id, f'лишилось {self.__time} хв')
-        for half_of_minute in range(int(self.__time * 2), 1, -1):
+        for half_of_minute in range(int(self.__time * 2) - 1, 1, -1):
+            time.sleep(30)
             if not self.__is_started:
                 return
-            time_message.edit_text(self.__user_id, f'лишилось {float(half_of_minute) / 2} хв')
-            time.sleep(30)
+            self.__bot.edit_message_text(f'лишилось {float(half_of_minute) / 2} хв', \
+                                         self.__user_id, time_message.message_id, )
         self.exit(False)
-
-    @abstractmethod
-    def rules(self):
-        pass
 
     def right_answer(self):
         return self.__right_answer
@@ -54,7 +61,7 @@ class Game:
             else:
                 self.__difficulty = 'середня'
                 self.__time = 3
-        self.__keyboard.keyboard.__getitem__(0).__getitem__(2).text = self.__difficulty
+        self.__difficulty_keyboard.text = self.__difficulty
 
     # @classmethod
     # def get_statistics(cls):
@@ -65,15 +72,20 @@ class Game:
         pass
 
     @abstractmethod
-    def exit(self, is_win):
+    def exit(self, is_win=False):
+        self.__bot.send_message(self.__user_id, 'Гра завершена')
         if is_win:
             self.__bot.send_message(self.__user_id, 'Ти виграв!!!')
         else:
-            self.__bot.send_message(self.__user_id, 'Час вийшов!!!')
             self.__bot.send_message(self.__user_id, f'Правильна відповідь: {self.__right_answer}')
         self.__is_started = False
 
-    def get_keyboard(self):
+    @classmethod
+    def get_keyboard(cls):
+        return cls.__keyboard
+
+    @property
+    def keyboard(self):
         return self.__keyboard
 
     @property
@@ -86,10 +98,10 @@ class Game:
 
 
 class FirstLetterGame(Game):
-    def __init__(self, **kwargs):
-        pass
+    def __init__(self, *args):
+        super().__init__(*args)
 
-    def rules(self):
+    def __str__(self):
         return 'Ти отримуєш слово на аглійській мові і твоя задача перекласти його за певний час.'
 
     @classmethod
@@ -99,14 +111,15 @@ class FirstLetterGame(Game):
     def set_value(self):
         pass
 
-    def exit(self, is_victory):
+    def exit(self, is_victory=False):
         pass
 
 
 class TranslatorGame(Game):
-    # time
-    # reward
-    def rules(self):
+    def __init__(self, *args):
+        super().__init__(*args)
+
+    def __str__(self):
         pass
 
     @classmethod
@@ -116,18 +129,15 @@ class TranslatorGame(Game):
     def set_value(self):
         pass
 
-    def exit(self, is_victory):
+    def exit(self, is_victory=False):
         pass
 
 
 class MixGame(Game):
-    # time
-    # reward
+    def __init__(self, *args):
+        super().__init__(*args)
 
-    def __init__(self, **kwargs):
-        pass
-
-    def rules(self):
+    def __str__(self):
         pass
 
     @classmethod
@@ -137,18 +147,15 @@ class MixGame(Game):
     def set_value(self):
         pass
 
-    def exit(self, is_victory):
+    def exit(self, is_victory=False):
         pass
 
 
 class PuzzleGame(Game):
-    # time
-    # reward
+    def __init__(self, *args):
+        super().__init__(*args)
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
-    def rules(self):
+    def __str__(self):
         pass
 
     @classmethod
@@ -158,5 +165,5 @@ class PuzzleGame(Game):
     def set_value(self):
         pass
 
-    def exit(self, is_victory):
+    def exit(self, is_victory=False):
         pass

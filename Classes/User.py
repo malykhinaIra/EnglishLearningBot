@@ -1,9 +1,12 @@
+from Classes.Level import Level
+
+
 class User:
     def __init__(self, id):
         self.__id = id
         self.__page = None
         self.__score = 0
-        self.__level = 'A1'
+        self.__level = Level()
         self.__number = 0
 
     @property
@@ -22,6 +25,13 @@ class User:
     @property
     def score(self):
         return self.__score
+
+    def add_score(self, value):
+        if not isinstance(value, int):
+            raise TypeError('value should have type "int"')
+        if value <= 0:
+            raise ValueError('value should be more 0')
+        self.__score += value
 
     @score.setter
     def score(self, value):
@@ -47,4 +57,4 @@ class User:
     def level(self, value):
         if not isinstance(value, str):
             raise TypeError('value should have type "str"')
-        self.__level = value
+        self.__level = Level(value)

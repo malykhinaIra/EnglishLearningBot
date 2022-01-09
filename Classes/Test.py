@@ -1,6 +1,7 @@
 import random
 import json
 from Interfaces.ITest import ITest
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 def load_questions():
@@ -10,22 +11,46 @@ def load_questions():
 
 
 class Test(ITest):
-    def __init__(self, topic=None):
-        self.topic = topic
-        if not self.topic:
-            self.topic = random.randint(1, 15)
-        self.tests = load_questions()[str(self.topic)]
-        self.list_test = list(self.tests.keys())
-        self.questions = random.choice(self.list_test)
-        self.variants = self.tests[self.questions]
-        self.score = 0
+    __keyboard = InlineKeyboardMarkup()
+    __keyboard.add(InlineKeyboardButton(text='Розпочати', callback_data='tests'))
+
+    def __init__(self, topic=random.randint(1, 15)):
+        self.__index = topic
+        self.__test = load_questions()[str(self.__index)]
+        self.__sentences = list(self.__test.keys())
+        self.__score = 0
+        self.__unused_sentences = self.__sentences
+        self.__current_sentence = None
+        self.next_task()
+
+    def next_task(self):
+        if self.__unused_sentences:
+            self.__current_sentence = random.choice(self.__unused_sentences)
+            self.__unused_sentences.remove(self.__current_sentence)
 
     def passing_test(self, answer):
-        if answer in self.variants:
-            self.score += 1
+        if not self.__current_sentence:
+            raise ValueError('there are no task to answer')
+        right_answer = self.__test[self.__current_sentence][1]
+        self.__current_sentence = None
+        if answer == right_answer:
+            self.__score += 1
             return f'Correct'
-        else:
-            return f'Wrong, correct answer is {self.variants[1]}'
+        return f'Wrong, correct answer is {right_answer}'
 
     def __str__(self):
-        return f' {self.questions}\n{self.variants[0]} '
+        if not self.__current_sentence:
+            raise ValueError('there are no task')
+        return f' {self.__current_sentence}\n{self.__test[self.__current_sentence][0]} '
+
+    @classmethod
+    def get_keyboard(cls):
+        return cls.__keyboard
+
+    @property
+    def score(self):
+        return self.__score
+
+    @property
+    def sentence(self):
+        return self.__current_sentence

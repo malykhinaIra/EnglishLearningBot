@@ -1,7 +1,7 @@
 import json
 import random
 from Interfaces.IRecomendations import IRecomendations
-from PIL import Image
+# from PIL import Image
 
 
 class Book(IRecomendations):
@@ -9,8 +9,8 @@ class Book(IRecomendations):
         with open("jsonFiles/books.json", "r", encoding="utf8") as books:
             self.books = json.load(books)
         self.level = level
-        self.list_choise = list(self.books[self.level].keys())
-        self.name_book = self.books[self.level][random.choice(self.list_choise)]
+        self.list_chose = list(self.books[self.level].keys())
+        self.name_book = self.books[self.level][random.choice(self.list_chose)]
 
     def image(self):
         return self.name_book["image"]
@@ -24,8 +24,8 @@ class Film(IRecomendations):
         with open("jsonFiles/films.json", "r", encoding="utf8") as films:
             self.films = json.load(films)
         self.level = level
-        self.list_choise = list(self.films[self.level].keys())
-        self.name_film = self.films[self.level][random.choice(self.list_choise)]
+        self.list_chose = list(self.films[self.level].keys())
+        self.name_film = self.films[self.level][random.choice(self.list_chose)]
 
     def description(self):
         return f'Level: {self.level}\n\t{self.name_film["name"]}\n{self.name_film["description"]}'

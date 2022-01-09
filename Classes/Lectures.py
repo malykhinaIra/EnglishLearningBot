@@ -22,9 +22,6 @@ class Lectures:
     def __str__(self):
         return f'\b{self.name}\b\n\n{self.text}'
 
-    # def exit(self):
-    #     pass
-
     @classmethod
     def get_keyboard(cls, number):
         count = math.ceil(float(data.__len__()) / 5)
@@ -35,7 +32,7 @@ class Lectures:
         keyboard = InlineKeyboardMarkup()
         for index in range(5):
             if number * 5 + index < data.__len__():
-                keyboard.add(InlineKeyboardButton(data[str(index + number * 5 + 1)]['name'], \
+                keyboard.add(InlineKeyboardButton(data[str(index + number * 5 + 1)]['name'],
                                                   callback_data=str(index + number * 5 + 1)))
         keyboard.add(*[InlineKeyboardButton(name, callback_data=name) for name in ['◀', '▶']])
         return keyboard

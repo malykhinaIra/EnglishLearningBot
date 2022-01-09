@@ -1,10 +1,8 @@
-import ctypes
 import random
 from abc import abstractmethod
 from telebot import *
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from Classes.Timer import Timer
-from ctypes import c_char
 from Classes.Words import Words
 
 
@@ -28,7 +26,7 @@ class Game:
         #     raise TypeError('right_answer should have type "str"')
         if not isinstance(bot, TeleBot):
             raise TypeError('bot should have type "TeleBot"')
-        self.__difficulty = 'середня'
+        self._difficulty = 'середня'
         self.__time = 3.
         self._bot = bot
         self._user_id = user_id
@@ -41,13 +39,13 @@ class Game:
         self.__keyboard = InlineKeyboardMarkup()
         self.__keyboard.add(InlineKeyboardButton(text="почати", callback_data="start"))
         self.__keyboard.add(InlineKeyboardButton(text="правила", callback_data="rules"))
-        self.__keyboard.add(InlineKeyboardButton(text="важкість: " + self.__difficulty, \
+        self.__keyboard.add(InlineKeyboardButton(text="важкість: " + self._difficulty,
                                                  callback_data="difficulty"))
         # keyboard.add(types.InlineKeyboardButton(text="статистика", callback_data="statistics"))
         self.__keyboard.add(InlineKeyboardButton(text="назад", callback_data="back"))
         self.__menu_message = bot.send_message(self._user_id, 'меню гри: ' + game_name, reply_markup=[self.__keyboard])
 
-    def start(self, right_answer):
+    def _start(self, right_answer):
         if not isinstance(right_answer, str):
             raise TypeError('right_answer should have type "str"')
         self.__right_answer = right_answer
@@ -59,29 +57,25 @@ class Game:
         return self.__right_answer
 
     def change_difficulty(self):
-        if self.__difficulty == 'середня':
-            self.__difficulty = 'важка'
+        if self._difficulty == 'середня':
+            self._difficulty = 'важка'
             self.__time = 2.
         else:
-            if self.__difficulty == 'важка':
-                self.__difficulty = 'легка'
+            if self._difficulty == 'важка':
+                self._difficulty = 'легка'
                 self.__time = 4.5
             else:
-                self.__difficulty = 'середня'
+                self._difficulty = 'середня'
                 self.__time = 3.
         self.__keyboard = InlineKeyboardMarkup()
         self.__keyboard.add(InlineKeyboardButton(text="почати", callback_data="start"))
         self.__keyboard.add(InlineKeyboardButton(text="правила", callback_data="rules"))
-        self.__keyboard.add(InlineKeyboardButton(text="важкість: " + self.__difficulty, \
+        self.__keyboard.add(InlineKeyboardButton(text="важкість: " + self._difficulty,
                                                  callback_data="difficulty"))
         # keyboard.add(types.InlineKeyboardButton(text="статистика", callback_data="statistics"))
         self.__keyboard.add(InlineKeyboardButton(text="назад", callback_data="back"))
-        self._bot.edit_message_text(message_id=self.__menu_message.id, chat_id=self._user_id, \
+        self._bot.edit_message_text(message_id=self.__menu_message.id, chat_id=self._user_id,
                                     reply_markup=[self.__keyboard], text=self.__menu_message.text)
-
-    # @classmethod
-    # def get_statistics(cls):
-    #     pass
 
     @abstractmethod
     def __str__(self):
@@ -125,6 +119,10 @@ class Game:
     def time(self):
         return self.__time
 
+    @property
+    def difficulty(self):
+        return self._difficulty
+
 
 class FirstLetterGame(Game):
     def __init__(self, *args):
@@ -135,27 +133,28 @@ class FirstLetterGame(Game):
     def __str__(self):
         return 'Ти отримуєш букву і твоє завдання написати слово, що починається на цю буквую'
 
-    # @classmethod
-    # def get_statistics(cls):
-    #     pass
-
     def start(self):
-        letter = chr(random.randint(97, 122))
+        letter = FirstLetterGame.__popularity_dictionary(self._difficulty, chr(random.randint(0, 8)))
         self._bot.send_message(self._user_id, f'Буква: {letter}')
-        condition = lambda word: True if re.match(f'^{letter}[a-zA-Z]*$', word) else False
+        self.__condition.add(lambda word: True if Words.read_word(word) else False)
+        self.__condition.add(lambda word: re.match(f'^{letter}[a-zA-Z]*$', word))
         for element in Words.read_words():
-            if condition(element[0]):
+            if list(self.__condition)[1](element[0]):
                 self.__right_answer = element[0]
                 break
-        self.__condition.add(lambda word: True if Words.read_word(word) else False)
-        self.__condition.add(condition)
-        super().start(self.__right_answer)
+        self._start(self.__right_answer)
 
     def __is_right_answer(self, value):
         for condition in self.__condition:
             if not condition(value):
                 return False
         return True
+
+    @staticmethod
+    def __popularity_dictionary(popularity, index):
+        return {'легка': [90, 91, 92, 93, 102, 105, 107, 108, 109],
+                'середня': [94, 95, 96, 97, 98, 101, 104, 110, 112],
+                'важка': [99, 100, 100, 103, 106, 111, 113]}[popularity][index]
 
 
 class TranslatorGame(Game):
@@ -167,17 +166,13 @@ class TranslatorGame(Game):
     def __str__(self):
         return 'Ти отримуєш слово на аглійській мові і твоя задача перекласти його.'
 
-    # @classmethod
-    # def get_statistics(cls):
-    #     pass
-
     def start(self):
         words = Words.read_words()
         word = words[random.randint(0, len(words))]
         self._bot.send_message(self._user_id, f'Слово: {word[1]}')
         self.__right_answer = word[0]
         self.__condition.add(lambda word_l: word_l == word[0])
-        super().start(self.__right_answer)
+        self._start(self.__right_answer)
 
     def __is_right_answer(self, value):
         for condition in self.__condition:
@@ -195,31 +190,38 @@ class MixGame(Game):
     def __str__(self):
         return 'Ти отримуєш перемішані букви і твоя задача зрозуміти слово.'
 
-        # @classmethod
-        # def get_statistics(cls):
-        #     pass
-
     def start(self):
         words = Words.read_words()
-        word = words[random.randint(0, len(words))]
-        mix = ''
+        word = words[random.randint(0, len(words) - 1)]
         length = len(word[0])
-        is_used = [False for i in range(length)]
+        while not MixGame.__is_in_range(length, self._difficulty):
+            word = words[random.randint(0, len(words) - 1)]
+            length = len(word[0])
+        mix = ''
+        is_used = [False in range(length)]
         while not length == len(mix):
-            index = random.randint(0, length)
+            index = random.randint(0, length - 1)
             if not is_used[index]:
                 mix += word[0][index]
                 is_used[index] = True
         self._bot.send_message(self._user_id, f'Слово: {mix}')
         self.__right_answer = word[0]
         self.__condition.add(lambda word_l: word_l == word[0])
-        super().start(self.__right_answer)
+        self._start(self.__right_answer)
 
     def __is_right_answer(self, value):
         for condition in self.__condition:
             if not condition(value):
                 return False
         return True
+
+    @staticmethod
+    def __is_in_range(number, difficulty):
+        if difficulty == 'легка':
+            return number <= 6
+        elif difficulty == 'середня':
+            return 3 <= number <= 8
+        return 6 <= number <= 11
 
 
 class PuzzleGame(Game):
@@ -231,17 +233,13 @@ class PuzzleGame(Game):
     def __str__(self):
         return 'Ти отримуєш слово на аглійській мові і твоя задача перекласти його.'
 
-        # @classmethod
-        # def get_statistics(cls):
-        #     pass
-
     def start(self):
         words = Words.read_words()
         word = words[random.randint(0, len(words))]
         self._bot.send_message(self._user_id, f'Слово: {word[1]}')
         self.__right_answer = word[0]
         self.__condition.add(lambda word_l: word_l == word[0])
-        super().start(self.__right_answer)
+        self._start(self.__right_answer)
 
     def __is_right_answer(self, value):
         for condition in self.__condition:

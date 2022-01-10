@@ -1,6 +1,5 @@
 import json
 import math
-
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 with open("jsonFiles/lectures.json", 'r', encoding="utf-8") as file:
@@ -8,7 +7,9 @@ with open("jsonFiles/lectures.json", 'r', encoding="utf-8") as file:
 
 
 class Lectures:
-    def __init__(self, lecture=None):
+    def __init__(self, lecture: int or None = None):
+        if not isinstance(lecture, int) and not lecture:
+            raise TypeError('lecture should have type "str" or be None')
         self.name = data[lecture]["name"]
         self.text = data[lecture]["text"]
         self.image = data[lecture]["image"]
@@ -23,7 +24,9 @@ class Lectures:
         return f'\b{self.name}\b\n\n{self.text}'
 
     @classmethod
-    def get_keyboard(cls, number):
+    def get_keyboard(cls, number: int) -> InlineKeyboardMarkup:
+        if not isinstance(number, int):
+            raise TypeError('number should have type "int"')
         count = math.ceil(float(data.__len__()) / 5)
         while number < 0:
             number += count
@@ -38,5 +41,5 @@ class Lectures:
         return keyboard
 
     @property
-    def keyboard(self):
+    def keyboard(self) -> InlineKeyboardMarkup:
         return self.__keyboard

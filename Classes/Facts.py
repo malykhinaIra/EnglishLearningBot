@@ -1,7 +1,9 @@
 import random
 import json
+from typing import List
 
-def load_facts():
+
+def load_facts() -> List[str]:
     with open("jsonFiles/facts.json", 'r', encoding="utf-8") as file:
         fun_facts = json.load(file)
         return fun_facts

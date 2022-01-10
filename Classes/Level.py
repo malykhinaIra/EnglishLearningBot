@@ -4,7 +4,7 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 class Level:
     __levels = ["A1", "A2", "B1", "B2", "C1", "None"]
 
-    def __init__(self, level='None'):
+    def __init__(self, level: str = 'None'):
         if not isinstance(level, str):
             raise TypeError('level should have type "str"')
         if not (level in Level.__levels):

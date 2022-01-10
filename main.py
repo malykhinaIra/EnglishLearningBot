@@ -1,3 +1,4 @@
+import Classes.User
 from Classes.Facts import Facts
 from Classes.Level import Level
 from Classes.Games import FirstLetterGame, PuzzleGame, TranslatorGame, MixGame, Game
@@ -66,16 +67,25 @@ def incorrect_cmd(message):
                 answer_quest = message.text
                 bot.send_message(message.chat.id, bot.get_user(message.chat.id).page.passing_test(answer_quest))
                 bot.get_user(message.chat.id).page.next_task()
-                if bot.get_user(message.chat.id).page.sentence:
+                if not bot.get_user(message.chat.id).page.index:
+                    bot.get_user(message.chat.id).score += 1
+                if bot.get_user(message.chat.id).page.sentence and (
+                        bot.get_user(message.chat.id).page.index or bot.get_user(message.chat.id).score < 5):
                     bot.send_message(message.chat.id, str(bot.get_user(message.chat.id).page))
                     bot.send_message(message.chat.id, "Введіть відповідь: ")
                 else:
                     bot.get_user(message.chat.id).add_score(bot.get_user(message.chat.id).page.score)
-                    bot.send_message(message.chat.id, 'Тест завершено')
-                    bot.send_message(message.chat.id, f"Ваш рахунок: {bot.get_user(message.chat.id).page.score}")
-                    if bot.get_user(message.chat.id).page.score == 15:
-                        fact = Facts()
-                        bot.send_message(message.chat.id, f"Fun fact: {fact}")
+                    bot.get_user(message.chat.id).page.stop()
+                    bot.send_message(message.from_user.id, f'Тест завершено')
+                    bot.send_message(message.from_user.id,
+                                     f'Ваш рахунок: {bot.get_user(message.chat.id).page.score}')
+                    if not bot.get_user(message.chat.id).page.index:
+                        if bot.get_user(message.chat.id).page.score >= 3:
+                            bot.send_message(message.chat.id, f"Fun fact: {Facts()}")
+                        delattr(Classes.User.User, 'score')
+                    else:
+                        if bot.get_user(message.chat.id).page.score >= 14:
+                            bot.send_message(message.chat.id, f"Fun fact: {Facts()}")
                     bot.get_user(message.chat.id).page = None
             else:
                 bot.reply_to(message, "Не можу зрозуміти Ваше повідомлення.\n Введіть /help.")
@@ -83,64 +93,69 @@ def incorrect_cmd(message):
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_worker(call):
-    dict_game = {"words": FirstLetterGame, "cipher": MixGame, "translate": TranslatorGame,
-                 "riddles": PuzzleGame}
-    if bot.get_user(call.from_user.id).page:
-        if issubclass(type(bot.get_user(call.from_user.id).page), Game):
-            if call.data == 'start':
-                bot.get_user(call.from_user.id).page.start()
-            elif call.data == 'rules':
-                bot.send_message(call.from_user.id, str(bot.get_user(call.from_user.id).page))
-            elif call.data == 'difficulty':
-                bot.get_user(call.from_user.id).page.change_difficulty()
-            elif call.data == 'back':
-                bot.get_user(call.from_user.id).page = None
-                bot.send_message(call.from_user.id, 'Обери гру: ', reply_markup=[Game.get_keyboard()])
-        elif issubclass(type(bot.get_user(call.from_user.id).page), Lectures):
-            if call.data == 'back':
-                bot.get_user(call.from_user.id).page = None
-                bot.edit_message_reply_markup(call.from_user.id, call.message.message_id, reply_markup=[
-                    Lectures.get_keyboard(bot.get_user(call.from_user.id).number)])
-            elif call.data == 'test':
-                bot.get_user(call.from_user.id).page = Test(bot.get_user(call.from_user.id).page.index)
-                bot.send_message(call.from_user.id, str(bot.get_user(call.from_user.id).page))
-                bot.send_message(call.from_user.id, "Введіть відповідь: ")
-        elif issubclass(type(bot.get_user(call.from_user.id).page), Level):
-            if call.data == 'up':
-                bot.get_user(call.from_user.id).level.up_level()
-                bot.send_message(call.from_user.id, "Ваш рівень: " + bot.get_user(call.from_user.id).level.level)
-            elif call.data == 'down':
-                bot.get_user(call.from_user.id).level.down_level()
-                bot.send_message(call.from_user.id, "Ваш рівень: " + bot.get_user(call.from_user.id).level.level)
-            elif call.data == "answer":
-                bot.send_message(call.from_user.id, "Введіть ваш рівень англійської: ")
-            elif call.data == 'book' or call.data == 'film':
-                recommend = get_recommend(call.data, bot.get_user(call.from_user.id).level.level)
-                bot.send_photo(call.from_user.id, recommend.image(), caption=recommend.description())
-    elif call.data == "tests":
-        bot.get_user(call.from_user.id).page = Test()
-        bot.send_message(call.from_user.id, str(bot.get_user(call.from_user.id).page))
-        bot.send_message(call.from_user.id, "Введіть відповідь: ")
-    elif call.data in dict_game:
-        bot.get_user(call.from_user.id).page = dict_game[call.data](bot, call.from_user.id)
-    elif call.data in data.keys():
-        bot.get_user(call.from_user.id).page = Lectures(call.data)
-        if len(str(bot.get_user(call.from_user.id).page)) > 4096:
-            for x in range(0, len(str(bot.get_user(call.from_user.id).page)), 4096):
-                bot.send_message(call.from_user.id, str(bot.get_user(call.from_user.id).page)[x:x + 4096])
-        else:
+    if bot.get_user(call.from_user.id):
+        dict_game = {"words": FirstLetterGame, "cipher": MixGame, "translate": TranslatorGame,
+                     "riddles": PuzzleGame}
+        if bot.get_user(call.from_user.id).page:
+            if issubclass(type(bot.get_user(call.from_user.id).page), Game):
+                if call.data == 'start':
+                    bot.get_user(call.from_user.id).page.start()
+                elif call.data == 'rules':
+                    bot.send_message(call.from_user.id, str(bot.get_user(call.from_user.id).page))
+                elif call.data == 'difficulty':
+                    bot.get_user(call.from_user.id).page.change_difficulty()
+                elif call.data == 'back':
+                    bot.get_user(call.from_user.id).page = None
+                    bot.send_message(call.from_user.id, 'Обери гру: ', reply_markup=[Game.get_keyboard()])
+            elif issubclass(type(bot.get_user(call.from_user.id).page), Lectures):
+                if call.data == 'back':
+                    bot.get_user(call.from_user.id).page = None
+                    bot.edit_message_reply_markup(call.from_user.id, call.message.message_id, reply_markup=[
+                        Lectures.get_keyboard(bot.get_user(call.from_user.id).number)])
+                elif call.data == 'test':
+                    bot.get_user(call.from_user.id).page = Test(bot, call.from_user.id,
+                                                                bot.get_user(call.from_user.id).page.index)
+                    bot.send_message(call.from_user.id, str(bot.get_user(call.from_user.id).page))
+                    bot.send_message(call.from_user.id, "Введіть відповідь: ")
+            elif issubclass(type(bot.get_user(call.from_user.id).page), Level):
+                if call.data == 'up':
+                    bot.get_user(call.from_user.id).level.up_level()
+                    bot.send_message(call.from_user.id, "Ваш рівень: " + bot.get_user(call.from_user.id).level.level)
+                elif call.data == 'down':
+                    bot.get_user(call.from_user.id).level.down_level()
+                    bot.send_message(call.from_user.id, "Ваш рівень: " + bot.get_user(call.from_user.id).level.level)
+                elif call.data == "answer":
+                    bot.send_message(call.from_user.id, "Введіть ваш рівень англійської: ")
+                elif call.data == 'book' or call.data == 'film':
+                    recommend = get_recommend(call.data, bot.get_user(call.from_user.id).level.level)
+                    bot.send_photo(call.from_user.id, recommend.image(), caption=recommend.description())
+        elif call.data == "tests":
+            setattr(bot.get_user(call.from_user.id), 'score', 0)
+            bot.get_user(call.from_user.id).page = Test(bot, call.from_user.id, 0)
             bot.send_message(call.from_user.id, str(bot.get_user(call.from_user.id).page))
-        bot.send_photo(call.from_user.id, bot.get_user(call.from_user.id).page.image)
-        bot.send_message(call.from_user.id, "Для засвоєння матеріалу пройдіть короткий тест за темою лекції",
-                         reply_markup=[bot.get_user(call.from_user.id).page.keyboard])
-    elif call.data == "◀":
-        bot.get_user(call.from_user.id).number -= 1
-        bot.edit_message_reply_markup(call.from_user.id, call.message.message_id,
-                                      reply_markup=[Lectures.get_keyboard(bot.get_user(call.from_user.id).number)])
-    elif call.data == "▶":
-        bot.get_user(call.from_user.id).number += 1
-        bot.edit_message_reply_markup(call.from_user.id, call.message.message_id,
-                                      reply_markup=[Lectures.get_keyboard(bot.get_user(call.from_user.id).number)])
+            bot.send_message(call.from_user.id, "Введіть відповідь: ")
+        elif call.data in dict_game:
+            bot.get_user(call.from_user.id).page = dict_game[call.data](bot, call.from_user.id)
+        elif call.data in data.keys():
+            bot.get_user(call.from_user.id).page = Lectures(call.data)
+            if len(str(bot.get_user(call.from_user.id).page)) > 4096:
+                for x in range(0, len(str(bot.get_user(call.from_user.id).page)), 4096):
+                    bot.send_message(call.from_user.id, str(bot.get_user(call.from_user.id).page)[x:x + 4096])
+            else:
+                bot.send_message(call.from_user.id, str(bot.get_user(call.from_user.id).page))
+            bot.send_photo(call.from_user.id, bot.get_user(call.from_user.id).page.image)
+            bot.send_message(call.from_user.id, "Для засвоєння матеріалу пройдіть короткий тест за темою лекції",
+                             reply_markup=[bot.get_user(call.from_user.id).page.keyboard])
+        elif call.data == "◀":
+            bot.get_user(call.from_user.id).number -= 1
+            bot.edit_message_reply_markup(call.from_user.id, call.message.message_id,
+                                          reply_markup=[Lectures.get_keyboard(bot.get_user(call.from_user.id).number)])
+        elif call.data == "▶":
+            bot.get_user(call.from_user.id).number += 1
+            bot.edit_message_reply_markup(call.from_user.id, call.message.message_id,
+                                          reply_markup=[Lectures.get_keyboard(bot.get_user(call.from_user.id).number)])
+    else:
+        bot.send_message(call.from_user.id, 'напишіть /start')
 
 
 @transliterate_function(language_code='ru', reversed=True)

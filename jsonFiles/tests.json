@@ -6,7 +6,7 @@
     ],
     "___ you from Sheffield?": [
       "1: am\n 2: is\n 3: are",
-      "2"
+      "3"
     ],
     "It ___ Sunday today.": [
       "1: am\n 2: is\n 3: are",
@@ -124,7 +124,7 @@
     ],
     "Kathy ___ how to change the oil in her car last weekend.": [
       "1: learn\n2: learned \n3: learning",
-      "1"
+      "2"
     ],
     "My father ___ our home in 1990, and he designed it as well.": [
       "1: builds\n2: built \n3: building",
@@ -156,7 +156,6 @@
       "1: make somebody feel nervous and worried\n2: make somebody feel happy and satisfied",
       "1"
     ],
-
     "\"Run out of time\" means:": [
       "1: have plenty of time left\n2: have not much time left",
       "2"

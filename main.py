@@ -55,13 +55,13 @@ def incorrect_cmd(message):
                     bot.send_message(message.chat.id, 'Не правильно')
             elif issubclass(type(bot.get_user(message.chat.id).page), Level):
                 level = translate(message.text)
-                try:
+                if level in ["A1", "A2", "B1", "B2", "C1"]:
                     bot.get_user(message.chat.id).level = level
                     bot.send_message(message.chat.id, "Ваш рівень: " + level)
                     bot.send_message(message.from_user.id, "Що ви хочете отримати?:",
                                      reply_markup=[bot.get_user(message.chat.id).level.keyboard])
-                except...:
-                    bot.send_message(message.chat.id, "Невірно введений рівень")
+                else:
+                    bot.send_message(message.chat.id, "Неправильно введений рівень")
                     bot.send_message(message.chat.id, "Введіть ваш рівень англійської: ")
             elif issubclass(type(bot.get_user(message.chat.id).page), Test):
                 answer_quest = message.text

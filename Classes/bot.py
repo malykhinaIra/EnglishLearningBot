@@ -10,7 +10,7 @@ from keyboards import MainKeyboard
 
 from Classes.constants import winning_score, max_message_length
 
-bot = BotWithPages('token')
+bot = BotWithPages('2125717807:AAGkQKa99oKe2AHvrSQMgBQJU9dtD9nJgVQ')
 
 
 @bot.message_handler(commands="start")

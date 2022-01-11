@@ -5,10 +5,11 @@ class Level:
     __levels = ["A1", "A2", "B1", "B2", "C1", "None"]
 
     def __init__(self, level: str = 'None'):
+        """Class for get level of english"""
         if not isinstance(level, str):
             raise TypeError('level should have type "str"')
         if not (level in Level.__levels):
-            raise ValueError('value of level should be "A1","A2","B1","B2","C1","C2","None"')
+            raise ValueError('value of level should be "A1","A2","B1","B2","C1","None"')
         self.__level = level
         if level == "None":
             self.__keyboard = InlineKeyboardMarkup()
@@ -25,13 +26,16 @@ class Level:
 
     @property
     def level(self):
+        """Get user’s level"""
         return self.__level
 
     @property
     def keyboard(self):
+        """Get keybord with recommend menu"""
         return self.__keyboard
 
     def up_level(self):
+        """Function for up your level of english"""
         if self.__level == 'A1':
             self.__level = 'A2'
         elif self.__level == 'A2':
@@ -40,13 +44,10 @@ class Level:
             self.__level = 'B2'
         elif self.__level == 'B2':
             self.__level = 'C1'
-        elif self.__level == 'C1':
-            self.__level = 'C2'
 
     def down_level(self):
-        if self.__level == 'C2':
-            self.__level = 'C1'
-        elif self.__level == 'C1':
+        """Function for down your level of english"""
+        if self.__level == 'C1':
             self.__level = 'B2'
         elif self.__level == 'B2':
             self.__level = 'B1'
